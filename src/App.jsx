@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Imagen1 from './assets/1.png';
-import Imagen2 from './assets/2.png';
+import ArbolIzquierdo from './assets/arbol-izquierdo.png';
+import ArbolDerecho from './assets/arbol-derecho.png';
 import Imagen3 from './assets/3.png';
 
 function App() {
@@ -16,52 +17,54 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Calculamos qué imágenes deben estar visibles
-  const showImage2 = scrollY > 400;
-  const showImage3 = scrollY > 800;
+  // Ajusta estos valores según necesites
+  const showLayer2 = scrollY > 300;
+  const showLayer3 = scrollY > 800;
 
   return (
     <div className="app-container">
-      {/* Contenedor de imágenes (ahora es lo primero que se ve) */}
-      <div className="scroll-container">
-        {/* Imagen 1 - Base */}
-        <div
-          className="image-container"
-          style={{
-            transform:'translateY(0)',
-            zIndex: 1
-          }}
-        >
-          <img src={Imagen1} alt="Imagen 1" className="sliding-image" />
-        </div>
-
-        {/* Imagen 2 - Media */}
-        <div
-          className="image-container"
-          style={{
-            transform: showImage2 ? 'translateY(0)' : 'translateY(100vh)',
-            zIndex: 2,
-            transitionDelay: '0s'
-          }}
-        >
-          <img src={Imagen2} alt="Imagen 2" className="sliding-image" />
-        </div>
-
-        {/* Imagen 3 - Superior */}
-        <div
-          className="image-container"
-          style={{
-            transform: showImage3 ? 'translateY(0)' : 'translateY(100vh)',
-            zIndex: 3,
-            transitionDelay: '0s'
-          }}
-        >
-          <img src={Imagen3} alt="Imagen 3" className="sliding-image" />
-        </div>
+      {/* Capa base - siempre visible */}
+      <div className="image-container layer1">
+        <img src={Imagen1} alt="Imagen 1" />
       </div>
 
-      {/* Espacio para hacer scroll */}
-      <div className="end-spacer" style={{ height: '200vh' }}></div>
+      {/* Árboles - animación lateral */}
+      <div className="image-container layer2">
+        <img
+          src={ArbolIzquierdo}
+          alt="Árbol izquierdo"
+          className="arbol-izquierdo"
+          style={{
+            transform: showLayer2 ? 'translateX(0)' : 'translateX(-100%)',
+            transition: 'transform 1s ease-out',
+            left: 0
+          }}
+        />
+        <img
+          src={ArbolDerecho}
+          alt="Árbol derecho"
+          className="arbol-derecho"
+          style={{
+            transform: showLayer2 ? 'translateX(0)' : 'translateX(100%)',
+            transition: 'transform 1s ease-out',
+            right: 0
+          }}
+        />
+      </div>
+
+      {/* Capa superior - fade in */}
+      <div
+        className="image-container layer3"
+        style={{
+          opacity: showLayer3 ? 1 : 0,
+          transition: 'opacity 1.2s ease-in-out'
+        }}
+      >
+        <img src={Imagen3} alt="Imagen 3" />
+      </div>
+
+      {/* Espacio para scroll */}
+      <div className="scroll-spacer" style={{ height: '1000px' }}></div>
     </div>
   );
 }
