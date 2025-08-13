@@ -67,11 +67,11 @@
   left: 0;
   width: 100%;
   background-color:rgba(0, 0, 0, 0.4);
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
   z-index: 1000;
   transform: translateY(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .navbar.show {
@@ -80,14 +80,17 @@
 }
 
 .navbar a {
-  color: white;
+  color: black;
   margin: 0 18px;
-  text-decoration: none;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
   font-size: 14px;
 }
 
 .navbar a:hover {
-  color: #ccc;
+  background-color: black;
+  color: white;
 }
 
 .scroll-spacer {

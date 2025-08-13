@@ -60,7 +60,7 @@ function App() {
           className="image-container layer3"
           style={{
             opacity: showLayer3 ? 1 : 0,
-            transition: 'opacity 1s ease-in-out'
+            transition: 'opacity 2s ease-in-out'
           }}
         >
           <img src={Imagen3} alt="Imagen 3" />
@@ -71,7 +71,7 @@ function App() {
           className="image-container layer4"
           style={{
             opacity: showLayer4? 1 : 0,
-            transition: 'opacity 1.5s ease-in-out'
+            transition: 'opacity 3s ease-in-out'
           }}
         >
           <img src={Imagen4} alt="Imagen 4" />
