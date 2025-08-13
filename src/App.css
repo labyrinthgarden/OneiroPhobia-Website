@@ -30,10 +30,10 @@
 
 .arbol-izquierdo, .arbol-derecho {
   position: fixed;
-  height: 100hv;
+  height: 100%;
   width: 100%;
   max-width: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .layer3 {
