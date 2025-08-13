@@ -3,13 +3,17 @@
   width: 100%;
 }
 
+.animation-container {
+  min-height: 100vh;
+  position: relative;
+}
+
 .image-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 
 .layer1 {
@@ -18,7 +22,7 @@
 
 .layer1 img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
 
@@ -30,7 +34,7 @@
 
 .arbol-izquierdo, .arbol-derecho {
   position: fixed;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   max-width: 100%;
   object-fit: cover;
@@ -42,7 +46,7 @@
 
 .layer3 img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
 
@@ -52,7 +56,7 @@
 
 .layer4 img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
 
@@ -90,4 +94,13 @@
   position: relative;
   margin-top: 100vh;
   background: transparent;
+}
+
+.main-content {
+  position: relative;
+  width: 95%;
+  max-width: 95%;
+  padding: 40px;
+  z-index: 5;
+  background: rgba(0,0,0,0.9);
 }
