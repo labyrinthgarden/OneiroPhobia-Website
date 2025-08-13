@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Imagen1 from './assets/1.png';
-import ArbolIzquierdo from './assets/arbol-izquierdo.png';
-import ArbolDerecho from './assets/arbol-derecho.png';
-import Imagen3 from './assets/3.png';
+import ArbolIzquierdo from './assets/arbol-izquierdo1.png';
+import ArbolDerecho from './assets/arbol-derecho1.png';
+import Imagen3 from './assets/31.png';
 import Imagen4 from './assets/4.png';
 
 function App() {
