@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Imagen1 from './assets/1.png';
-import ArbolIzquierdo from './assets/arbol-izquierdo1.png';
-import ArbolDerecho from './assets/arbol-derecho1.png';
-import Imagen3 from './assets/31.png';
+import ArbolIzquierdo from './assets/arbol-izquierdo.png';
+import ArbolDerecho from './assets/arbol-derecho.png';
+import Imagen3 from './assets/3.png';
 import Imagen4 from './assets/4.png';
 
 function App() {
@@ -81,7 +81,6 @@ function App() {
         <nav className={`navbar ${showNavbar ? 'show' : ''}`}>
           <a href="#home">Homepage</a>
           <a href="#downloads">Downloads</a>
-          {/* Agrega más opciones si necesitas */}
         </nav>
 
         {/* Espacio para scroll */}
@@ -97,7 +96,6 @@ function App() {
           Nam possimus quasi qui sunt perspiciatis et nihil atque est repellat similique. Et velit voluptatem et tempora magni sed nobis voluptas qui placeat iure. Ea eligendi tenetur aut iste quia et quia sequi. Vel deserunt numquam ut consequatur temporibus quo molestiae odit in consequatur beatae qui obcaecati ipsam est autem dolore.
 
           Ut possimus quisquam hic eligendi eaque qui voluptate omnis? Sit quas sapiente ea perferendis officia est adipisci quos ab voluptas deserunt sit quia beatae.</p>
-        {/* Agrega más elementos aquí para permitir scroll */}
         <div style={{ height: '49vh' }}></div> {/* Espacio adicional de ejemplo */}
       </div>
     </div>
