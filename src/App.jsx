@@ -19,9 +19,9 @@ function App() {
   }, []);
 
   const showLayer2 = scrollY > 50;
-  const showLayer3 = scrollY > 800;
+  const showLayer3 = scrollY > 1000;
   const showLayer4 = scrollY > 1700;
-  const showNavbar = scrollY > 1999;
+  const showNavbar = scrollY > 3000;
 
   return (
     <div className="app-container">
@@ -84,7 +84,7 @@ function App() {
         </nav>
 
         {/* Espacio para scroll */}
-        <div className="scroll-spacer" style={{ height: '3000px' }}></div>
+        <div className="scroll-spacer" style={{ height: '4000px' }}></div>
       </div>
 
       <div className="main-content">
