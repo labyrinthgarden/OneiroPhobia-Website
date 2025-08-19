@@ -13,8 +13,6 @@ function Navbar() {
     return () => clearInterval(timer);
   }, []);
 
-  console.log('Tiempo:', time, 'Mostrar navbar:', time > 2); // ← Debug
-
   const showNavbar = time > 2;
 
   return (
