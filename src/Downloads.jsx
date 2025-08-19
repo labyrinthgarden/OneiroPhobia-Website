@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import backImage from './assets/downloads_page/background_dowloads.png';
-import androidImage from './assets/downloads_page/android.PNG';
+import androidImage from './assets/downloads_page/android.png';
 import windowsImage from './assets/downloads_page/windows.png';
 import linuxImage from './assets/downloads_page/linux.png';
-import appleImage from './assets/downloads_page/apple.PNG';
+import appleImage from './assets/downloads_page/apple.png';
 import './Downloads.css';
 
 function Downloads() {
@@ -36,7 +36,7 @@ function Downloads() {
         linux: 'https://www.mediafire.com/file/8j1mdfpjfa5xeka/OneiroPhobia.zip/file',
         macos: 'https://www.mediafire.com/file/8j1mdfpjfa5xeka/OneiroPhobia.zip/file'
       };
-
+      
       const link = document.createElement('a');
       link.href = downloadLinks[platform];
       link.download = `oneirophobia-${platform}`;
@@ -48,7 +48,7 @@ function Downloads() {
 
     return (
 
-     <div
+     <div 
       className="downloads-container"
       style={{
         backgroundImage: `url(${backgroundImage})`,
@@ -73,11 +73,11 @@ function Downloads() {
           </p>
         </div>
       </div>
-
+      
       <div className="preview-container">
-        <img
-          src={currentImage}
-          alt="Preview"
+        <img 
+          src={currentImage} 
+          alt="Preview" 
           className={`preview-image ${visible ? 'visible' : ''}`}
         />
       </div>
@@ -88,7 +88,7 @@ function Downloads() {
 
           <div className="downloads-options">
 
-            <div
+            <div 
                 className="download-option"
                onMouseEnter={() => {
                   setCurrentDescription(descriptions.android);
@@ -126,8 +126,8 @@ function Downloads() {
                 <p>Para PC Windows</p>
               </div>
             </div>
-
-            <div
+            
+            <div 
               className="download-option"
               onMouseEnter={() => {
                   setCurrentDescription(descriptions.linux);
@@ -146,8 +146,8 @@ function Downloads() {
                 <p>Para distribuciones Linux</p>
               </div>
             </div>
-
-            <div
+            
+            <div 
               className="download-option"
               onMouseEnter={() => {
                   setCurrentDescription(descriptions.macos);

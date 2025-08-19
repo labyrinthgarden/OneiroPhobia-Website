@@ -5,11 +5,9 @@ import ArbolIzquierdo from './assets/arbol-izquierdo.png';
 import ArbolDerecho from './assets/arbol-derecho.png';
 import Imagen3 from './assets/3.png';
 import Imagen4 from './assets/4.png';
-import Downloads from './Downloads';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
-  const [currentPage, setCurrentPage] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +25,6 @@ function App() {
 
   return (
     <div className="app-container">
-      {currentPage === 'home' ? (
-        <>
       <div className="animation-container">
         {/* Capa base - siempre visible */}
         <div className="image-container layer1">
@@ -83,8 +79,8 @@ function App() {
 
         {/* Barra de navegación - aparece después de la animación */}
         <nav className={`navbar ${showNavbar ? 'show' : ''}`}>
-          <a href="#home" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); }}>Homepage</a>
-          <a href="#downloads" onClick={(e) => { e.preventDefault(); setCurrentPage('downloads'); }}>Downloads</a>
+          <a href="#home">Homepage</a>
+          <a href="#downloads">Downloads</a>
         </nav>
 
         {/* Espacio para scroll */}
@@ -102,9 +98,6 @@ function App() {
           Ut possimus quisquam hic eligendi eaque qui voluptate omnis? Sit quas sapiente ea perferendis officia est adipisci quos ab voluptas deserunt sit quia beatae.</p>
         <div style={{ height: '49vh' }}></div> {/* Espacio adicional de ejemplo */}
       </div>
-      </>) : (
-        <Downloads />
-      )}
     </div>
   );
 }
