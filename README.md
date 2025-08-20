@@ -1,5 +1,6 @@
 # OneiroPhobia-Website
-A Full Stack web project designed to present and promote the game "Oneirophobia".
+A reactjs project designed to present and promote the game "Oneirophobia".
 # Preview Screenshots
-![Vista 1](preview/1.png)
-![Vista 2](preview/2.png)
+![Vista 1](preview/1.PNG)
+![Vista 2](preview/2.PNG)
+![Vista 2](preview/3.PNG)

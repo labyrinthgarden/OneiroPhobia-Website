@@ -7,6 +7,8 @@ import Imagen3 from '../../assets/images/layers/Layer3.PNG';
 import Imagen4 from '../../assets/images/layers/Layer4.PNG';
 import logoImg from '../../assets/images/icons/logo.PNG';
 import godotImg from '../../assets/images/icons/godot.PNG';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function Homepage() {
   const [scrollY, setScrollY] = useState(0);
@@ -84,7 +86,7 @@ function Homepage() {
 
       <div className="main-content">
         <h2 className="title">Oneirophobia</h2>
-        <p>
+        <p className='description'>
           Oneirophobia es un proyecto desarrollado con godot engine
           que busca ofrecer una calidad visual, argumentativa y tener un propuesta interesante de
           jugabilidad.
@@ -95,6 +97,11 @@ function Homepage() {
           Al jugar, deberás enfrentarte a las manifestaciones de lo mas profundo de la conciencia, las precupaciones e impedimentos
          y desentrañar la complejidad de los sueños al enfrentar una realidad despiadada. Pero ten cuidado: cuanto más
           profundices, más te perseguirá la misma pregunta… ¿y si despertar es solo el principio de la pesadilla?
+          <br /><br />
+          <FontAwesomeIcon icon={faGithub} className="github-icon" />
+          <a href="https://github.com/labyrinthgarden/Oneirophobia-Showcase" target="_blank" rel="noopener noreferrer">
+            https://github.com/labyrinthgarden/Oneirophobia-Showcase
+          </a>
           <br /><br />
         </p>
         <div style={{ height: '7vh' }}></div>
@@ -107,10 +114,10 @@ function Homepage() {
           </div>
         </div>
         <span className="team">Equipo:</span>
-        <span className="team">@labyrinthgarden</span>
-        <span className="team">@berserk-24</span>
-        <span className="team">@daniela</span>
-        <span className="team">@salcedo</span>
+        <span className="team"><FontAwesomeIcon icon={faGithub} className="github-icon" />@labyrinthgarden</span>
+        <span className="team"><FontAwesomeIcon icon={faGithub} className="github-icon" />@berserk-24</span>
+        <span className="team"><FontAwesomeIcon icon={faGithub} className="github-icon" />@daniela</span>
+        <span className="team"><FontAwesomeIcon icon={faGithub} className="github-icon" />@salcedo</span>
       </div>
     </div>
   );
