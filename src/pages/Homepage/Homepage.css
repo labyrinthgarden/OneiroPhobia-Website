@@ -87,6 +87,15 @@
   font-style: italic;
 }
 
+.github-link {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.github-link:hover{
+  color: #999;
+}
+
 .logos-container {
     display: flex;
     flex-direction: row;

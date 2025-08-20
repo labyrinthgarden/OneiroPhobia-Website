@@ -99,7 +99,7 @@ function Homepage() {
           profundices, más te perseguirá la misma pregunta… ¿y si despertar es solo el principio de la pesadilla?
           <br /><br />
           <FontAwesomeIcon icon={faGithub} className="github-icon" />
-          <a href="https://github.com/labyrinthgarden/Oneirophobia-Showcase" target="_blank" rel="noopener noreferrer">
+          <a className="github-link" href="https://github.com/labyrinthgarden/Oneirophobia-Showcase" target="_blank" rel="noopener noreferrer">
             https://github.com/labyrinthgarden/Oneirophobia-Showcase
           </a>
           <br /><br />
