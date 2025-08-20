@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import backImage from '../../assets/images/downloads/background.PNG';
-import androidImage from '../../assets/images/icons/android.PNG';
-import windowsImage from '../../assets/images/icons/windows.PNG';
-import linuxImage from '../../assets/images/icons/linux.PNG';
-import appleImage from '../../assets/images/icons/apple.PNG';
+import backImage from '../../assets/images/downloads/background.png';
+import androidImage from '../../assets/images/icons/android.png';
+import windowsImage from '../../assets/images/icons/windows.png';
+import linuxImage from '../../assets/images/icons/linux.png';
+import appleImage from '../../assets/images/icons/apple.png';
 import './Downloads.css';
 
 function Downloads() {
@@ -31,10 +31,10 @@ function Downloads() {
 
     const handleDownload = (platform) => {      //si, todos son los mismos, por mientras. tenerlo por aca en las carpetas no renta
       const downloadLinks = {
-        android: 'https://www.mediafire.com/file/8j1mdfpjfa5xeka/OneiroPhobia.zip/file',
-        windows: 'https://www.mediafire.com/file/8j1mdfpjfa5xeka/OneiroPhobia.zip/file',
-        linux: 'https://www.mediafire.com/file/8j1mdfpjfa5xeka/OneiroPhobia.zip/file',
-        macos: 'https://www.mediafire.com/file/8j1mdfpjfa5xeka/OneiroPhobia.zip/file'
+        android: 'https://www.dropbox.com/scl/fi/fvva3njtwtea7fr005wow/OneiroPhobia.zip?rlkey=0l92setoeuppq1lbl9aeh52yq&st=s49bwx0i&dl=1',
+        windows: 'https://www.dropbox.com/scl/fi/fvva3njtwtea7fr005wow/OneiroPhobia.zip?rlkey=0l92setoeuppq1lbl9aeh52yq&st=s49bwx0i&dl=1',
+        linux: 'https://www.dropbox.com/scl/fi/fvva3njtwtea7fr005wow/OneiroPhobia.zip?rlkey=0l92setoeuppq1lbl9aeh52yq&st=s49bwx0i&dl=1',
+        macos: 'https://www.dropbox.com/scl/fi/fvva3njtwtea7fr005wow/OneiroPhobia.zip?rlkey=0l92setoeuppq1lbl9aeh52yq&st=s49bwx0i&dl=1'
       };
 
       const link = document.createElement('a');
