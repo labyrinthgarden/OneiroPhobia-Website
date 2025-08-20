@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import backImage from '../../assets/images/downloads/background.png';
-import androidImage from '../../assets/images/icons/android.png';
-import windowsImage from '../../assets/images/icons/windows.png';
-import linuxImage from '../../assets/images/icons/linux.png';
-import appleImage from '../../assets/images/icons/apple.png';
+import backImage from '../../assets/images/downloads/background.PNG';
+import androidImage from '../../assets/images/icons/android.PNG';
+import windowsImage from '../../assets/images/icons/windows.PNG';
+import linuxImage from '../../assets/images/icons/linux.PNG';
+import appleImage from '../../assets/images/icons/apple.PNG';
 import './Downloads.css';
 
 function Downloads() {

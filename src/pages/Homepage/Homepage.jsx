@@ -5,6 +5,8 @@ import ArbolIzquierdo from '../../assets/images/layers/Layer2-1.PNG';
 import ArbolDerecho from '../../assets/images/layers/Layer2-2.PNG';
 import Imagen3 from '../../assets/images/layers/Layer3.PNG';
 import Imagen4 from '../../assets/images/layers/Layer4.PNG';
+import logoImg from '../../assets/images/icons/logo.PNG';
+import godotImg from '../../assets/images/icons/godot.PNG';
 
 function Homepage() {
   const [scrollY, setScrollY] = useState(0);
@@ -81,13 +83,34 @@ function Homepage() {
       </div>
 
       <div className="main-content">
-        <h2>OneiroPhobia Project</h2>
+        <h2 className="title">Oneirophobia</h2>
         <p>
-          Lorem ipsum dolor sit amet. Et dolores neque et praesentium optio sed possimus molestiae et omnis facere. Et natus mollitia non dignissimos atque id dolorem internos. Non tenetur eaque qui blanditiis laborum qui delectus adipisci non sint dicta. Est pariatur praesentium et illum officia et eius porro.
-          Nam possimus quasi qui sunt perspiciatis et nihil atque est repellat similique. Et velit voluptatem et tempora magni sed nobis voluptas qui placeat iure. Ea eligendi tenetur aut iste quia et quia sequi. Vel deserunt numquam ut consequatur temporibus quo molestiae odit in consequatur beatae qui obcaecati ipsam est autem dolore.
-          Ut possimus quisquam hic eligendi eaque qui voluptate omnis? Sit quas sapiente ea perferendis officia est adipisci quos ab voluptas deserunt sit quia beatae.
+          Oneirophobia es un proyecto desarrollado con godot engine
+          que busca ofrecer una calidad visual, argumentativa y tener un propuesta interesante de
+          jugabilidad.
+          <br /><br />
+          En el equipo de Oneirophobia tenemos la intencion de crear un proyecto interesante, que llegue a satisfacer nuestras
+          expectativas y objetivos.
+          <br /><br />
+          Al jugar, deberás enfrentarte a las manifestaciones de lo mas profundo de la conciencia, las precupaciones e impedimentos
+         y desentrañar la complejidad de los sueños al enfrentar una realidad despiadada. Pero ten cuidado: cuanto más
+          profundices, más te perseguirá la misma pregunta… ¿y si despertar es solo el principio de la pesadilla?
+          <br /><br />
         </p>
-        <div style={{ height: '49vh' }}></div>
+        <div style={{ height: '7vh' }}></div>
+        <div className="logos-container">
+          <div className="logos-wrapper">
+            <img src={logoImg} alt="logo image" />
+          </div>
+          <div className="logos-wrapper">
+            <img src={godotImg} alt="godot image" />
+          </div>
+        </div>
+        <span className="team">Equipo:</span>
+        <span className="team">@labyrinthgarden</span>
+        <span className="team">@berserk-24</span>
+        <span className="team">@daniela</span>
+        <span className="team">@salcedo</span>
       </div>
     </div>
   );
