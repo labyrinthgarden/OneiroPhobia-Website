@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import backImage from '../../assets/images/downloads/background.PNG';
+import backImage from '../../assets/images/downloads/background_download.png';
 import androidImage from '../../assets/images/icons/android.PNG';
 import windowsImage from '../../assets/images/icons/windows.PNG';
 import linuxImage from '../../assets/images/icons/linux.PNG';
