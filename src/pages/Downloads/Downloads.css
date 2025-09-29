@@ -1,7 +1,8 @@
 @font-face {
-  font-family: 'HowAsksSatan';
-  src: url('../../assets/fonts/who_asks_satan.ttf') format('truetype');
+  font-family: 'Ghastly Panic';
+  src: url('../../assets/fonts/Ghastly Panic.ttf') format('truetype');
   font-weight: normal;
+  font-size: 400px;
   font-style: normal;
   font-display: swap;
 }
@@ -40,7 +41,7 @@
 }
 
 .downloads-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 130px;
@@ -120,9 +121,9 @@
   background: transparent;
   border: none;
   color: white;
-  font-size: 5.5rem;
+  font-size: 9.5rem;
   font-weight: bold;
-  font-family: 'HowAsksSatan', sans-serif;
+  font-family: 'Ghastly Panic', sans-serif;
   outline: none;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   min-width: 40px;
