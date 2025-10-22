@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,27 +8,18 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const handleSubmit = async (event:MouseEvent) => {
-    event.preventDefault();
-    try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-      if (!response.ok) {
-        throw new Error('Login failed');
-      }
-      const data = await response.json();
-      if (data.error) {
-        setError(data.error);
-      } else {
-        window.location.href = '/';
-      }
-    } catch (error) {
-      setError(error.message);
+  const handleSubmit = async (event:React.FormEvent) => {
+  event.preventDefault();
+    const response = await signIn('credentials', {
+      redirect: false,
+      email: email,
+      password: password
+    });
+    if (response?.error) {
+      setError(response.error);
+      throw new Error(`Login failed ${response.error}`);
+    } else {
+      window.location.href = '/';
     }
   };
   return (

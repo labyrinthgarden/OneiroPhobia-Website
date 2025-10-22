@@ -1,33 +1,47 @@
 'use client'
 import { useState } from 'react';
-import Image from 'next/image';
+import { signIn } from 'next-auth/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [error, setError] = useState('');
-  const handleSubmit = async (event:MouseEvent) => {
+  const router = useRouter();
+
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
       });
-      if (!response.ok) {
-        throw new Error('Register failed');
-      }
+
       const data = await response.json();
-      if (data.error) {
-        setError(data.error);
+
+      if (!response.ok) {
+        setError(data.error || 'Registration failed');
+        return;
+      }
+
+      const signInResponse = await signIn('credentials', {
+        redirect: false,
+        email,
+        password,
+      });
+
+      if (signInResponse?.error) {
+        setError('Registration successful but login failed, try logging again');
       } else {
-        window.location.href = '/';
+        router.push('/');
       }
     } catch (error) {
-      setError(error.message);
+      setError('An error occurred during registration');
     }
   };
   return (
@@ -42,6 +56,12 @@ const Register = () => {
                   color: 'white'}}>
                     sign up
             </h1>
+            <input
+              type="text"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="Name"
+            />
             <input
               type="email"
               value={email}
@@ -58,7 +78,7 @@ const Register = () => {
             <button type="submit"
               className="bg-black/60 mb-1"
             >Sign Up</button>
-            {error && <p className="mb-0 text-center">{error}</p>}
+            {error && <p className="mb-0 text-center max-w-70">{error}</p>}
           </form>
         </div>
       </div>

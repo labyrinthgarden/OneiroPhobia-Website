@@ -4,10 +4,12 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { usePathname } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
-const navbar: React.FC = () => {
+const Navbar: React.FC = () => {
   const [time, setTime] = useState<number>(0);
   const pathname = usePathname();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -17,6 +19,7 @@ const navbar: React.FC = () => {
   }, []);
 
   const showNavbar = time > 2;
+  const isLoggedIn = status === 'authenticated';
 
   return (
     <nav
@@ -31,16 +34,37 @@ const navbar: React.FC = () => {
       >
         Homepage
       </Link>
-      <Link
-        href="/login"
-        className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
-          transition-colors hover:bg-black hover:text-white`}
-      >
-        Login&nbsp;
-        <FontAwesomeIcon icon={faUser} />
-      </Link>
+      {!isLoggedIn && (
+        <Link
+          href="/login"
+          className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
+            transition-colors hover:bg-black hover:text-white`}
+        >
+          Login&nbsp;
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
+      )}
+      {isLoggedIn && (
+        <>
+          <Link
+            href="/downloads"
+            className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
+              transition-colors hover:bg-black hover:text-white`}
+          >
+            Downloads
+          </Link>
+          <Link
+            href="/account"
+            className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
+              transition-colors hover:bg-black hover:text-white`}
+          >
+            Account&nbsp;
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
+        </>
+      )}
     </nav>
   );
 };
 
-export default navbar;
+export default Navbar;
