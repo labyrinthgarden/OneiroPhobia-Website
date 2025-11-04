@@ -16,9 +16,9 @@ const Homepage: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const layer2Factor = 0.3;
-  const layer3Factor = 0.1;
-  const layer4Factor = 0.1;
+  const layer2Factor = 0.5;
+  const layer3Factor = 0.8;
+  const layer4Factor = 0.15;
 
   const layer2LeftX = Math.max(-500, Math.min(0, -500 + scrollY * layer2Factor));
   const layer2RightX = Math.min(500, Math.max(0, 500 - scrollY * layer2Factor));
@@ -78,7 +78,7 @@ const Homepage: React.FC = () => {
         </div>
 
         {/* Espacio para scroll */}
-        <div style={{ height: '9500px' }}></div>
+        <div style={{ height: '9000px' }}></div>
       </div>
 
       <div className="relative w-[100%] max-w-[100%] h-screen p-20 z-50 bg-black/80 mx-auto mt-20">

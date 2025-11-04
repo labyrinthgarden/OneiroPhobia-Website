@@ -5,6 +5,13 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: 'Ghastly Panic';
+  src: url('/fonts/GhastlyPanic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 input{
     font-size:15px;
     boder:none;

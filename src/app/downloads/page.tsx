@@ -67,7 +67,7 @@ const Downloads: React.FC = () => {
         <h1
           className=" text-white text-[10vw]"
           style={{
-            fontFamily: "'Ghastly Panic', sans-serif",
+            fontFamily: "'Ghastly Panic.ttf', sans-serif",
           }}
         >
           Oneirophobia
