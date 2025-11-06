@@ -13,3 +13,5 @@ A Full-stack project designed to present and promote the game "Oneirophobia".
 ![Vista 3](previews/3.png)
 ![Vista 4](previews/4.png)
 ![Vista 5](previews/5.png)
+# Tests Execution
+![Vista 6](previews/6.png)
