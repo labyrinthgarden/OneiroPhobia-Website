@@ -9,15 +9,24 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const handleSubmit = async (event:React.FormEvent) => {
-  event.preventDefault();
+    event.preventDefault();
+    // Email validation
+    if (!email) {
+      setError('Please enter your email address');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
     const response = await signIn('credentials', {
       redirect: false,
       email: email,
       password: password
     });
     if (response?.error) {
-      setError(response.error);
-      throw new Error(`Login failed ${response.error}`);
+      setError('Invalid email or password. Please try again.');
+      return;
     } else {
       window.location.href = '/';
     }
