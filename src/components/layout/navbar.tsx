@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { usePathname } from 'next/navigation';
@@ -25,44 +26,54 @@ const Navbar: React.FC = () => {
     <nav
       className={`fixed top-0 left-0 w-full bg-black/40 py-2 text-center z-[1000] transition-all duration-1000 ${
         showNavbar ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5'
-      }`}
+      } flex items-center`}
     >
-      <Link
-        href="/"
-        className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
-          transition-colors  hover:bg-black hover:text-white`}
-      >
-        Homepage
-      </Link>
-      {!isLoggedIn && (
-        <Link
-          href="/login"
-          className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
-            transition-colors hover:bg-black hover:text-white`}
-        >
-          Login&nbsp;
-          <FontAwesomeIcon icon={faUser} />
+      <div className="absolute left-4 top-1 flex items-center">
+        <Link href="/">
+          <Image
+            src="/images/icons/logo.PNG"
+            alt="Logo"
+            width={55}
+            height={55}
+            priority
+            style={{ borderRadius: '10px' }}
+          />
         </Link>
-      )}
-      {isLoggedIn && (
-        <>
+      </div>
+      <div className="mx-auto flex items-center justify-center">
+        <Link
+          href="/"
+          className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm transition-colors  hover:bg-black hover:text-white`}
+        >
+          Homepage
+        </Link>
+        {!isLoggedIn && (
           <Link
-            href="/downloads"
-            className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
-              transition-colors hover:bg-black hover:text-white`}
+            href="/login"
+            className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm transition-colors hover:bg-black hover:text-white`}
           >
-            Downloads
-          </Link>
-          <Link
-            href="/account"
-            className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm
-              transition-colors hover:bg-black hover:text-white`}
-          >
-            Account&nbsp;
+            Login&nbsp;
             <FontAwesomeIcon icon={faUser} />
           </Link>
-        </>
-      )}
+        )}
+        {isLoggedIn && (
+          <>
+            <Link
+              href="/downloads"
+              className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm transition-colors hover:bg-black hover:text-white`}
+            >
+              Downloads
+            </Link>
+            <Link
+              href="/account"
+              className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm transition-colors hover:bg-black hover:text-white`}
+            >
+              Account&nbsp;
+              <FontAwesomeIcon icon={faUser} />
+            </Link>
+          </>
+        )}
+      </div>
     </nav>
   );
 };
