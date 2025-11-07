@@ -1,8 +1,8 @@
 import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { findUserByEmail } from "@/lib/users";
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 import bcrypt from "bcrypt";
-import { setCookie } from "cookies-next";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -14,10 +14,10 @@ export const authOptions: AuthOptions = {
       },
       async authorize(credentials, req) {
         if (!credentials) return null;
-        const user = findUserByEmail(credentials.email);
+        // Buscar usuario con prisma
+        const user = await prisma.user.findUnique({ where: { email: credentials.email } });
         if (user && await bcrypt.compare(credentials.password, user.password)) {
-          //custom cookie on successful login
-          setCookie('customSession', 'your-session-value', { req, res: req.res, maxAge: 60 * 60 * 24 });
+          // next-auth maneja la cookie de sesión automáticamente
           return { id: user.id, email: user.email };
         }
         return null;
