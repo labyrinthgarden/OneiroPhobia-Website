@@ -28,24 +28,20 @@ const Navbar: React.FC = () => {
         showNavbar ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5'
       } flex items-center`}
     >
-      <div className="absolute left-4 top-1 flex items-center">
-        <Link href="/">
-          <Image
-            src="/images/icons/logo.PNG"
-            alt="Logo"
-            width={55}
-            height={55}
-            priority
-            style={{ borderRadius: '10px' }}
-          />
-        </Link>
-      </div>
       <div className="mx-auto flex items-center justify-center">
         <Link
           href="/"
-          className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm transition-colors  hover:bg-black hover:text-white`}
+          className={`mx-4 bg-white text-black rounded-2xl px-3 py-1 text-sm transition-colors hover:bg-black hover:text-white flex items-center gap-2`}
         >
-          Homepage
+          <Image
+            src="/images/icons/logo.PNG"
+            alt="Logo"
+            width={22}
+            height={22}
+            priority
+            style={{ borderRadius: '8px' }}
+          />
+          <span>Homepage</span>
         </Link>
         {!isLoggedIn && (
           <Link
